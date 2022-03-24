@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Team CXXZ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Capstone project 1 : Nirvana - Personal Training and Yoga Web Development
 
-## Available Scripts
+1. **Organization:** 
 
-In the project directory, you can run:
+   ​	Nirvana PT has been in operation for 12 years. The business is a sole trader and  was operated as Personal training only for the last 11 years. Over the last 12 months Nirvana PT has diversified from a personal training  business to encompassing a yoga component.  
 
-### `npm start`
+   ​	As part of the business future growth I would like to offer corporate yoga retreats  involving business and build attendance at weekly yoga classes as an extension of  my service range.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ​	The website will be a new digital marketing platform to promote yoga classes,  retreats and 1:1 sessions. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ​	Hoping to maximize SEO and exposure through website google words by using key  words so that these services can be picked up and promoted through all social  media platforms This business aims to cater primarily for the 30 - 60 years age group.
 
-### `npm test`
+   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Project Description**
 
-### `npm run build`
+   ​	Research and develop your ideas for an innovative and creative website  prototype to showcase Nirvana Personal Training and Yoga. Select a  platform that will meet my needs as a sole operator who is not tech savvy,  but interested in learning how to maintain and continue to extend my  business web presence. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ​	Photos and information content will be provided to the team. A crucial element of this project is the team's handover education and  material for the client to manage the website independently after the life  of the Capstone partnership. Handover materials that include short  demonstration videos and a manual format that is accessible and allows  me to easily maintain and update the web pages and backend features.  Create links to feed from the website to social media - Instagram and  Facebook. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ​	Promote sponsors on website and possible link their Instagram  Other functions include:  Enquiry system connected to range of PT and yoga services Client database promote services and provide snippets of what we provide with small  videos, such as an 8 week fitness challenge  Health questionnaire to be linked to website and to be able to be filled in  and kept within a database. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ​	Links to promote and inspire fitness goals through demonstration videos -  meditation session, stretching program for triathletes,  beginner/introduction yoga, weights session, general stretching program  etc.
 
-### `npm run eject`
+   
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
