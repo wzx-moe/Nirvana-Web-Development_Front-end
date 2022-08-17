@@ -8,6 +8,9 @@ import SiteHeader from '../components/siteHeader';
 import JsonRender from '../components/jsonRender';
 import ControlledCarousel from '../components/controlledCarousel';
 import Introduction from '../components/introduction';
+import ResourcesPreview from '../components/resourcesPreview';
+import Schedules from '../components/schedules';
+import SiteFooter from '../components/siteFooter';
 
 
 const GlobalComponent = {
@@ -16,7 +19,10 @@ const GlobalComponent = {
     Input,
     SiteHeader,
     ControlledCarousel,
-    Introduction  //json中用到的组件都要在这里声明
+    Introduction,
+    ResourcesPreview,
+    Schedules,
+    SiteFooter  //json中用到的组件都要在这里声明
 }
 
 export default function HomePage(){
@@ -27,14 +33,6 @@ export default function HomePage(){
             attr: {
             }
         },
-        // {
-        //     name: 'Image',
-        //     attr: {
-        //         id:'welcomeImg',
-        //         src:"https://picsum.photos/200/300?random=1",
-        //         alt:"Welcome Img"
-        //     }
-        // },
         {
             name: 'ControlledCarousel',
             attr: {
@@ -56,28 +54,20 @@ export default function HomePage(){
             attr: {
                 introductionText:"Intro info"
             }
+        },
+        {
+            name: 'ResourcesPreview',
+            attr: {
+                url:"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
+                text:"Resource Text"
+            }
+        },
+        {
+            name: 'Schedules'
+        },
+        {
+            name: 'SiteFooter'
         }
-        // {
-        //     name: 'Input',
-        //     attr: {
-        //         size:'large',
-        //         value:'第一个'
-        //     }
-        // },
-        // {
-        //     name: 'Input',
-        //     attr: {
-        //         size:'default',
-        //         value:'第二个'
-        //     }
-        // },
-        // {
-        //     name: 'Input',
-        //     attr: {
-        //         size:'small',
-        //         value:'sample3'
-        //     }
-        // }
     ];
 
     return (

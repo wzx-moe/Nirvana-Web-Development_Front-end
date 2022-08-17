@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import RecImg from '../temp/Rectangle1.png';
 
 import '../css/carousel.css';
 
@@ -36,6 +37,7 @@ export default function ControlledCarousel(props) {
             </Carousel.Item>
         </Carousel>
         <p id='welcomeInfo'>WELCOME</p>
+        <img id='Rec' src={RecImg} alt=''/>
     </div>
   );
 }

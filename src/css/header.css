@@ -17,7 +17,7 @@ li a {
     font-size: 30px;
 }
 
-#logo {
+#logo-top {
     position: absolute;
     width: 9%;
     height: auto;
@@ -27,13 +27,13 @@ li a {
     z-index: 2;
 }
 
-#ins {
+#ins-top {
     position: absolute;
     left: 14%;
     top: 35px;
 }
 
-#facebook {
+#facebook-top {
     position: absolute;
     left: 17%;
     top: 35px;
