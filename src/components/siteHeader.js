@@ -1,50 +1,20 @@
-import { HomeOutlined, AppstoreOutlined,  SettingOutlined, FacebookOutlined, InstagramOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
-import '../less/header.less'
-
-const items = [
-    {
-        label: 'Logo here',
-        key: 'Logo',
-        id: 'Logo',
-    },
-    {
-        label: 'My Instagram',
-        key: 'Instagram link',
-        icon: <InstagramOutlined />,
-    },
-    {
-        label: 'My Facebook',
-        key: 'facebook link',
-        icon: <FacebookOutlined />,
-    },
-    {
-        label: 'Home',
-        key: 'home',
-        icon: <HomeOutlined />,
-    },
-    {
-        label: 'About',
-        key: 'about',
-        icon: <AppstoreOutlined />,
-    },
-    {
-        label: 'Contact',
-        key: 'contact',
-        icon: <SettingOutlined />,
-    },
-    {
-        label: (
-        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-            Resources
-        </a>
-        ),
-        key: 'resources',
-    },
-];
+import { FacebookOutlined, InstagramOutlined } from '@ant-design/icons';
+import '../css/header.css'
+import logo from '../temp/logo.png'
 
 const SiteHeader = () => {
-  return <Menu mode="horizontal" items={items} />;
+    return(
+        <ul>
+            <img id='logo' src={logo} alt='logo'/>
+            <a id='ins' href='https://www.instagram.com/nirvanapersonaltraining/'><InstagramOutlined/></a>
+            <a id='facebook' href='https://www.facebook.com/nirvanapersonaltraining'><FacebookOutlined/></a>
+            <li id='home'><a href="/">Home</a></li>
+            <li id='about'><a href="aboutPage">About</a></li>
+            <li id='contact'><a href="contactUsPage">Contact</a></li>
+            <li id='detail'><a href="detailPage">Resources</a></li>
+        </ul>
+    )
+    
 };
 
 export default SiteHeader;

@@ -1,57 +1,90 @@
 import React from 'react';
-import { Rate,Input,DatePicker } from 'antd';
-import '../less/homepage.css';
+import { Rate,Input } from 'antd';
+import { Image } from 'react-bootstrap';
+import '../css/homepage.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SiteHeader from '../components/siteHeader';
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+import JsonRender from '../components/jsonRender';
+import ControlledCarousel from '../components/controlledCarousel';
+import Introduction from '../components/introduction';
+
 
 const GlobalComponent = {
     Rate,
+    Image,
     Input,
-    MonthPicker,
-    RangePicker,
-    WeekPicker,
+    SiteHeader,
+    ControlledCarousel,
+    Introduction  //json中用到的组件都要在这里声明
 }
 
 export default function HomePage(){
-    // 测试数据
+    // 测试数据,最终该Json由后端提供
     const Data = [
         {
-            name: 'Input',
+            name: 'SiteHeader',
             attr: {
-                size:'large',
-                value:'第一个'
+            }
+        },
+        // {
+        //     name: 'Image',
+        //     attr: {
+        //         id:'welcomeImg',
+        //         src:"https://picsum.photos/200/300?random=1",
+        //         alt:"Welcome Img"
+        //     }
+        // },
+        {
+            name: 'ControlledCarousel',
+            attr: {
+                imgSrc1:"https://picsum.photos/200/300?random=1",
+                imgSrc2:"https://picsum.photos/200/300?random=2",
+                imgSrc3:"https://picsum.photos/200/300?random=3"
             }
         },
         {
-            name: 'Input',
+            name: 'Image',
             attr: {
-                size:'default',
-                value:'第二个'
+                id:'Portrait',
+                src:"https://picsum.photos/200/300?random=1",
+                alt:"Portrait"
             }
         },
         {
-            name: 'Input',
+            name: 'Introduction',
             attr: {
-                size:'small',
-                value:'第三个'
+                introductionText:"Intro info"
             }
         }
+        // {
+        //     name: 'Input',
+        //     attr: {
+        //         size:'large',
+        //         value:'第一个'
+        //     }
+        // },
+        // {
+        //     name: 'Input',
+        //     attr: {
+        //         size:'default',
+        //         value:'第二个'
+        //     }
+        // },
+        // {
+        //     name: 'Input',
+        //     attr: {
+        //         size:'small',
+        //         value:'sample3'
+        //     }
+        // }
     ];
-    const loop = (arr) => (
-        arr.map(item => {
-            if(item.children){
-                return <div {...item.attr} >{loop(item.children)}</div>
-            }
-            const ComponentInfo = GlobalComponent[item.name]
-            return <ComponentInfo {...item.attr} />
-        })
-    );
 
     return (
         <div>
-            <SiteHeader/>
-            {loop(Data)}
+            <JsonRender ComponentList={GlobalComponent} InputJson={Data}/>
+            {/* <img id='welcomeImg' src="https://picsum.photos/200/300?random=2" alt="Welcome Img"/> */}
         </div>
+        
     );
 }
