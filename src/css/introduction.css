@@ -1,21 +1,30 @@
 #out-intro-div{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 50px 39px;
+    position: relative;
 
+    width: 100%;
+    height: 900px;
+
+    background: #ffffff;
+}
+
+#inner-intro-div{
     position: absolute;
-    width: 1220px;
+    width: 62%;
     height: 800px;
-    left: 0px;
-    top: 920px;
+    top: 100px;
 
     background: #F2F8E7;
 }
 
 #intro-title{
-    width: 461px;
+    position: absolute;
     height: 83px;
+    width: 461px;
+    left: 379.5px;
+    top: 50px;
+
 
     font-family: 'Inter';
     font-style: italic;
@@ -24,27 +33,18 @@
     line-height: 77px;
 
     color: #1F775E;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
-#inner-intro-div{
-    width: 1142px;
+#intro-text{
+    position: absolute;
     height: 423px;
+    width: 1142px;
+    left: 39px;
+    top: 133px;
+    
 
     background: #C7CFB9;
 
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
     text-align: center;
 }
 
@@ -53,6 +53,7 @@
     width: 220px;
     height: 88px;
     top: 650px;
+    left: 500px;
     padding: 16px 36px;
     gap: 16px;
 
@@ -60,34 +61,28 @@
 
     background: rgba(160, 234, 176, 0.65);
     border-radius: 100px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 3;
-    flex-grow: 0;
 }
 
 #about-button-word{
     width: 148px;
     height: 56px;
-
+    position: absolute;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 140%;
     text-decoration: none;
-    /* identical to box height, or 56px */
 
     text-align: center;
 
     color: #065F46;
+}
 
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+#Portrait{
+    position: absolute;
+    width: 33%;
+    left: 66%;
+    height: 800px;
+    top: 100px;
 }

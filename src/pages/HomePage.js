@@ -1,6 +1,4 @@
 import React from 'react';
-import { Rate,Input } from 'antd';
-import { Image } from 'react-bootstrap';
 import '../css/homepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,9 +12,6 @@ import SiteFooter from '../components/siteFooter';
 
 
 const GlobalComponent = {
-    Rate,
-    Image,
-    Input,
     SiteHeader,
     ControlledCarousel,
     Introduction,
@@ -41,14 +36,14 @@ export default function HomePage(){
                 imgSrc3:"https://picsum.photos/200/300?random=3"
             }
         },
-        {
-            name: 'Image',
-            attr: {
-                id:'Portrait',
-                src:"https://picsum.photos/200/300?random=1",
-                alt:"Portrait"
-            }
-        },
+        // {
+        //     name: 'Image',
+        //     attr: {
+        //         id:'Portrait',
+        //         src:"https://picsum.photos/200/300?random=1",
+        //         alt:"Portrait"
+        //     }
+        // },
         {
             name: 'Introduction',
             attr: {
