@@ -12,7 +12,7 @@ export default function ControlledCarousel(props) {
   };
 
   return (
-    <div>
+    <div id='carousel-body'>
         <Carousel className="carousel" activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
                 <img

@@ -3,7 +3,7 @@ ul {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 80px;
 
     list-style-type: none;
 }
@@ -24,43 +24,43 @@ li a {
     width: 9%;
     height: auto;
     left: 1%;
-    top: -20px;
-    border-radius: 90px;
+    top: -20%;
+    border-radius: 90%;
     z-index: 2;
 }
 
 #ins-top {
     position: absolute;
     left: 14%;
-    top: 35px;
+    top: 35%;
 }
 
 #facebook-top {
     position: absolute;
     left: 17%;
-    top: 35px;
+    top: 35%;
 }
 
 #home {
     position: absolute;
     left: 41%;
-    top: 35px;
+    top: 35%;
 }
 
 #about {
     position: absolute;
     left: 55%;
-    top: 35px;
+    top: 35%;
 }
 
 #contact {
     position: absolute;
     left: 68%;
-    top: 35px;
+    top: 35%;
 }
 
 #detail {
     position: absolute;
     left: 82%;
-    top: 35px;
+    top: 35%;
 }

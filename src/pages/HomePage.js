@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/homepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SiteHeader from '../components/siteHeader';
@@ -36,14 +35,6 @@ export default function HomePage(){
                 imgSrc3:"https://picsum.photos/200/300?random=3"
             }
         },
-        // {
-        //     name: 'Image',
-        //     attr: {
-        //         id:'Portrait',
-        //         src:"https://picsum.photos/200/300?random=1",
-        //         alt:"Portrait"
-        //     }
-        // },
         {
             name: 'Introduction',
             attr: {
@@ -68,7 +59,6 @@ export default function HomePage(){
     return (
         <div>
             <JsonRender ComponentList={GlobalComponent} InputJson={Data}/>
-            {/* <img id='welcomeImg' src="https://picsum.photos/200/300?random=2" alt="Welcome Img"/> */}
         </div>
         
     );
