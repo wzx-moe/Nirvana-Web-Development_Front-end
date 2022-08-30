@@ -15,13 +15,14 @@ export default function AboutPage(){
     // 测试数据,最终该Json由后端提供
     const Data = [
         {
-            name: 'SiteHeader',
+            name: "SiteHeader",
             attr: {
             }
         },
-        
         {
-            name: 'SiteFooter'
+            name: "SiteFooter",
+            attr: {
+            }
         }
     ];
 
@@ -29,6 +30,5 @@ export default function AboutPage(){
         <div>
             <JsonRender ComponentList={GlobalComponent} InputJson={Data}/>
         </div>
-        
     );
 }

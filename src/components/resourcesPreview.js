@@ -4,11 +4,11 @@ import RecImg from '../temp/Rectangle2.png';
 
 export default function ResourcesPreview(props){
     return(
-        <div>
+        <div id='resources'>
             <div id='gap'/>
             <div id='resources-body'>
                 <p id='resources-title'>Resources preview</p>
-                <ReactPlayer url={props.url} controls={true} id='resource-video'/>
+                <ReactPlayer url={props.url} controls={true} id='resource-video' width={"35%"} height={"auto"}/>
                 <div id='resources-text-body'>
                     <p id='resources-text'>{props.text}</p>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import RecImg from '../temp/Rectangle1.png';
+import TestImg from '../temp/title1.png';
 
 import '../css/carousel.css';
 
@@ -17,21 +18,21 @@ export default function ControlledCarousel(props) {
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc1}
+                    src={TestImg}
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc2}
+                    src={TestImg}
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc3}
+                    src={TestImg}
                     alt="Third slide"
                 />
             </Carousel.Item>

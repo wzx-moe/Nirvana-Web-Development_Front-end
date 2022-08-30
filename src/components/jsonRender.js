@@ -10,7 +10,7 @@ export default function JsonRender(props){
     );
 
     return(
-        <div>
+        <div id="json-render">
             {loop(props.InputJson)}
         </div>
     )

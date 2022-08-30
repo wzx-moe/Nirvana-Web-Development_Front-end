@@ -15,13 +15,14 @@ export default function DetailPage(){
     // 测试数据,最终该Json由后端提供
     const Data = [
         {
-            name: 'SiteHeader',
+            name: "SiteHeader",
             attr: {
             }
         },
-        
         {
-            name: 'SiteFooter'
+            name: "SiteFooter",
+            attr: {
+            }
         }
     ];
 

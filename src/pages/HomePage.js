@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/homepage.css';
 
 import SiteHeader from '../components/siteHeader';
 import JsonRender from '../components/jsonRender';
@@ -8,6 +9,7 @@ import Introduction from '../components/introduction';
 import ResourcesPreview from '../components/resourcesPreview';
 import Schedules from '../components/schedules';
 import SiteFooter from '../components/siteFooter';
+
 
 
 const GlobalComponent = {
@@ -49,15 +51,19 @@ export default function HomePage(){
             }
         },
         {
-            name: 'Schedules'
+            name: 'Schedules',
+            attr: {
+            }
         },
         {
-            name: 'SiteFooter'
+            name: 'SiteFooter',
+            attr: {
+            }
         }
     ];
 
     return (
-        <div>
+        <div id='homepage'>
             <JsonRender ComponentList={GlobalComponent} InputJson={Data}/>
         </div>
         

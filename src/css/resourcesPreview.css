@@ -1,19 +1,22 @@
-#gap{
+#resources{
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
-    height: 80px;
+    height: 100%;
+}
+
+#gap{
+    width: 100%;
+    height: 10%;
 
     background: #FFFFFF;
     box-shadow: inset 4px 2px 52px -23px rgba(0, 0, 0, 0.5);
 }
 
 #resources-body{
-    display: flex;
-    flex-direction: column;
-    position: relative;
     width: 100%;
-    height: 800px;
+    height: 90%;
 
     background: #C7CFB9;
 }
@@ -21,12 +24,12 @@
 #resources-title{
     position: absolute;
     left: 37%;
-    top: 7%;
+    top: 11%;
 
     font-family: 'Inter';
     font-style: italic;
     font-weight: 600;
-    font-size: 64px;
+    font-size: 3vw;
     line-height: 77px;
 
     color: #1F775E;
@@ -34,8 +37,6 @@
 
 #resource-video{
     position: absolute;
-    width: 30%;
-    height: 40%;
     left: 10%;
     top: 25%;
 }
@@ -45,7 +46,7 @@
     width: 40%;
     height: 50%;
     left: 55%;
-    top: 20%;
+    top: 25%;
 
     background: rgba(242, 248, 231, 0.65);
     text-align: center;
@@ -73,7 +74,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.5vw;
     line-height: 140%;
     /* identical to box height, or 56px */
 
@@ -87,6 +88,6 @@
 #bottom{
     position: absolute;
     width: 100%;
-    height: 218px;
-    top: 997px;
+    height: 20%;
+    top: 80%;
 }
