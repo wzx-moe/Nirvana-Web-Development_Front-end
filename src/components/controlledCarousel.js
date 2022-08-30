@@ -37,7 +37,7 @@ export default function ControlledCarousel(props) {
                 />
             </Carousel.Item>
         </Carousel>
-        <p id='welcomeInfo'>WELCOME</p>
+        <p id='welcomeInfo'>{props.title}</p>
         <img id='Rec' src={RecImg} alt=''/>
     </div>
   );

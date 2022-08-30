@@ -34,7 +34,8 @@ export default function HomePage(){
             attr: {
                 imgSrc1:"https://picsum.photos/200/300?random=1",
                 imgSrc2:"https://picsum.photos/200/300?random=2",
-                imgSrc3:"https://picsum.photos/200/300?random=3"
+                imgSrc3:"https://picsum.photos/200/300?random=3",
+                title:"Welcome"
             }
         },
         {

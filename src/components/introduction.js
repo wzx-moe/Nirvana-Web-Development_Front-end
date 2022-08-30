@@ -1,5 +1,6 @@
 import '../css/introduction.css'
 import { Image } from 'react-bootstrap';
+import TestImg2 from '../temp/title2.png';
 
 export default function Introduction(props){
     return(
@@ -13,7 +14,7 @@ export default function Introduction(props){
                     <a id='about-button-word' href='aboutPage'>ABOUT</a>
                 </div>
             </div>
-            <Image id='Portrait' src="https://picsum.photos/200/300?random=1" alt="Portrait"/>
+            <Image id='Portrait' src={TestImg2} alt="Portrait"/>
         </div>
     )
 }
