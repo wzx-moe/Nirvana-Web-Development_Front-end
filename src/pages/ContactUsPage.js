@@ -4,6 +4,7 @@ import '../css/homepage.css';
 
 import SiteHeader from '../components/siteHeader';
 import ControlledCarousel from '../components/controlledCarousel';
+import ContactInfo from '../components/contactInfo';
 import JsonRender from '../components/jsonRender';
 import SiteFooter from '../components/siteFooter';
 
@@ -11,6 +12,7 @@ import SiteFooter from '../components/siteFooter';
 const GlobalComponent = {
     SiteHeader,
     ControlledCarousel,
+    ContactInfo,
     SiteFooter  //json中用到的组件都要在这里声明
 }
 
@@ -29,6 +31,13 @@ export default function ContactUsPage(){
                 imgSrc2:"https://picsum.photos/200/300?random=2",
                 imgSrc3:"https://picsum.photos/200/300?random=3",
                 title:"Contact Us"
+            }
+        },
+        {
+            name: "ContactInfo",
+            attr: {
+                phoneNumber:"phone number here",
+                location:"location here"
             }
         },
         {

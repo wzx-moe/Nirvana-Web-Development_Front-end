@@ -4,7 +4,7 @@ import logo from '../temp/logo.png'
 
 const SiteHeader = () => {
     return(
-        <ul>
+        <ul id='header-body'>
             <img id='logo-top' src={logo} alt='logo'/>
             <a id='ins-top' href='https://www.instagram.com/nirvanapersonaltraining/'><InstagramOutlined/></a>
             <a id='facebook-top' href='https://www.facebook.com/nirvanapersonaltraining'><FacebookOutlined/></a>

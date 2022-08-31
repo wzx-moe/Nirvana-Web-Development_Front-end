@@ -66,6 +66,8 @@
     position: absolute;
     left: 55%;
     top: 25%;
+    height: 50%;
+    width: 27%;
     z-index: 3;
 }
 
@@ -73,6 +75,8 @@
     position: absolute;
     left: 65%;
     top: 55%;
+    height: 40%;
+    width: 27%;
     z-index: 2;
 }
 
@@ -80,6 +84,8 @@
     position: absolute;
     left: 65%;
     top: 5%;
+    height: 40%;
+    width: 27%;
     z-index: 2;
 }
 

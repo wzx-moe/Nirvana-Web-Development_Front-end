@@ -27,7 +27,7 @@ export default function AboutPage(){
         {
             name: "AboutUsCard",
             attr: {
-                cardtext:"Something about Nirvana...test text~ test text~ test text~ test text~ test text~ test text~ test text~ test text~ test text~ test text~ test text~ "
+                cardtext:"Something about Nirvana..."
             }
         },
         {

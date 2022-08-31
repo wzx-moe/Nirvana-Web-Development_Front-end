@@ -1,4 +1,4 @@
-ul {
+#header-body {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -21,7 +21,7 @@ li a {
 
 #logo-top {
     position: absolute;
-    width: auto;
+    width: 10%;
     height: 200%;
     left: 1%;
     top: -20%;
