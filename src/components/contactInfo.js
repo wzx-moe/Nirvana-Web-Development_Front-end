@@ -27,12 +27,12 @@ export default function ContactInfo(props){
                 <div id='contact-form-body'>
                     <Form>
                         <Form.Group className="mb-3" controlId="formName">
-                            <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="name" placeholder="Enter name" />
+                            <Form.Label>*Your Name</Form.Label>
+                            <Form.Control type="name" placeholder="*Enter name" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formEmail">
-                            <Form.Label>Your Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Label>*Your Email address</Form.Label>
+                            <Form.Control type="email" placeholder="*Enter email" />
                             <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                             </Form.Text>
