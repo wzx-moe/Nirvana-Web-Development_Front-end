@@ -45,7 +45,22 @@
     line-height: 140%;
 
     text-align: center;
-    text-transform: uppercase;
+
+    color: #000000;
+}
+
+#hidden-login{
+    position: absolute;
+    left: 60%;
+    top: 80%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 140%;
+
+    text-align: center;
 
     color: #000000;
 }

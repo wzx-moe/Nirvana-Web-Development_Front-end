@@ -8,6 +8,8 @@ import AboutUsCard from '../components/aboutUsCard';
 import LocationMap from '../components/locationMap';
 import SiteFooter from '../components/siteFooter';
 
+import useFetch from '../components/useFetch';
+
 
 const GlobalComponent = {
     SiteHeader,
@@ -17,11 +19,31 @@ const GlobalComponent = {
 }
 
 export default function AboutPage(){
+    
+    //据说这个要写在配置文件里面？
+    const url = '127.0.0.1:8080/api/page/home';
+    
+    //打开时Get页面Json
+
+    // const { data,isPending,error } = useFetch('GET',url,'');
+    // if(isPending){
+    //     return(
+    //         <p>
+    //             Loading...
+    //         </p>
+    //     )
+    // }
+    // if(error){
+    //     return(
+    //         <p>Something went wrong:{error}</p>
+    //     )
+    // }
+
     // 测试数据,最终该Json由后端提供
     const Data = [
         {
-            name: "SiteHeader",
-            attr: {
+            "name": "SiteHeader",
+            "attr": {
             }
         },
         {

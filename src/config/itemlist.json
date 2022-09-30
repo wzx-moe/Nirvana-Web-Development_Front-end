@@ -1,0 +1,66 @@
+[
+    {
+        "ID":"100",
+        "Type":"Picture",
+        "Attr":"HomePage",
+        "Name":"Welcome Picture 1",
+        "Url":"/controlPage?id=100",
+        "SourceUrl":"127.0.0.1:8080/upload/itemname"
+    },
+    {
+        "ID":"101",
+        "Type":"Picture",
+        "Attr":"HomePage",
+        "Name":"Welcome Picture 2",
+        "Url":"/controlPage?id=101",
+        "SourceUrl":""
+    },
+    {
+        "Type":"",
+        "Attr":"HomePage",
+        "Name":"Welcome Picture 3",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"HomePage",
+        "Name":"Introduction Text",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"HomePage",
+        "Name":"Introduction Photo",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"HomePage",
+        "Name":"Resource Vedio",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"HomePage",
+        "Name":"Resource Text",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"AboutPage",
+        "Name":"About Page Item",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"DetailPage",
+        "Name":"Detail Page Item",
+        "Url":"#"
+    },
+    {
+        "Type":"",
+        "Attr":"ContactPage",
+        "Name":"Contact Page Item",
+        "Url":"#"
+    }
+]

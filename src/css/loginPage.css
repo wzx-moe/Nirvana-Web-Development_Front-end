@@ -1,0 +1,30 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#root{
+    height: 100%;
+    width: 100%;
+}
+
+#loginpage{
+    height: 100%;
+    width: 100%;
+}
+
+#json-render{
+    height: 100%;
+    width: 100%;
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 40%;
+    height: 60%;
+    top: 10%;
+    left: 30%;
+
+}

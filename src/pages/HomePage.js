@@ -10,6 +10,8 @@ import ResourcesPreview from '../components/resourcesPreview';
 import Schedules from '../components/schedules';
 import SiteFooter from '../components/siteFooter';
 
+import useFetch from '../components/useFetch';
+
 
 
 const GlobalComponent = {
@@ -22,6 +24,26 @@ const GlobalComponent = {
 }
 
 export default function HomePage(){
+    
+    //据说这个要写在配置文件里面？
+    const url = '127.0.0.1:8080/api/page/home';
+    
+    //打开时Get页面Json
+
+    // const { data,isPending,error } = useFetch('GET',url,'');
+    // if(isPending){
+    //     return(
+    //         <p>
+    //             Loading...
+    //         </p>
+    //     )
+    // }
+    // if(error){
+    //     return(
+    //         <p>Something went wrong:{error}</p>
+    //     )
+    // }
+
     // 测试数据,最终该Json由后端提供
     const Data = [
         {
@@ -41,14 +63,14 @@ export default function HomePage(){
         {
             name: 'Introduction',
             attr: {
-                introductionText:"Intro info"
+                introductionText:"Intro info 这里应该改一下字体啥的"
             }
         },
         {
-            name: 'ResourcesPreview',
+            name: "ResourcesPreview",
             attr: {
                 url:"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
-                text:"Resource Text"
+                text:"Resource Text  这里也是"
             }
         },
         {
