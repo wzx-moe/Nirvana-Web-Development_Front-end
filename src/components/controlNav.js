@@ -1,18 +1,19 @@
 import itemlist from '../config/itemlist.json';
+import {Link} from "react-router-dom";
 
 export default function ControlNav(props){
     return(
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3 sidebar-sticky">
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase">
-                    <a class="link-secondary" href="#">
+                    <Link class="link-secondary" to="#">
                         Edit Calendar
-                    </a>
+                    </Link>
                 </h6>
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase">
-                    <a class="link-secondary" href="#">
-                        Edit Vedios
-                    </a>
+                    <Link class="link-secondary" to="#">
+                        Edit Videos
+                    </Link>
                 </h6>
                 <br/>
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
@@ -24,10 +25,10 @@ export default function ControlNav(props){
                             if(item.Attr === "HomePage"){
                                 return(
                                     <li class="nav-item">
-                                         <a class="nav-link" href={item.Url}>
-                                             {item.Name}
-                                         </a>
-                                     </li>
+                                        <Link class="nav-link" to={item.Url}>
+                                            {item.Name}
+                                        </Link>
+                                    </li>
                                  )
                             }
                         })
@@ -43,11 +44,11 @@ export default function ControlNav(props){
                             if(item.Attr === "AboutPage"){
                                 return(
                                     <li class="nav-item">
-                                         <a class="nav-link" href={item.Url}>
-                                             {item.Name}
-                                         </a>
-                                     </li>
-                                 )
+                                        <Link class="nav-link" to={item.Url}>
+                                            {item.Name}
+                                        </Link>
+                                    </li>
+                                )
                             }
                         })
                     }
@@ -64,11 +65,11 @@ export default function ControlNav(props){
                             if(item.Attr === "DetailPage"){
                                 return(
                                     <li class="nav-item">
-                                         <a class="nav-link" href={item.Url}>
-                                             {item.Name}
-                                         </a>
-                                     </li>
-                                 )
+                                        <Link class="nav-link" to={item.Url}>
+                                            {item.Name}
+                                        </Link>
+                                    </li>
+                                )
                             }
                         })
                     }
@@ -83,11 +84,11 @@ export default function ControlNav(props){
                             if(item.Attr === "ContactPage"){
                                 return(
                                     <li class="nav-item">
-                                         <a class="nav-link" href={item.Url}>
-                                             {item.Name}
-                                         </a>
-                                     </li>
-                                 )
+                                        <Link class="nav-link" to={item.Url}>
+                                            {item.Name}
+                                        </Link>
+                                    </li>
+                                )
                             }
                         })
                     }

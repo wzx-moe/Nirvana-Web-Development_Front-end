@@ -1,4 +1,5 @@
-//todo: 一个简单的登陆界面，使用token
+//todo: 一个简单的登陆界面，使用token 搞定了
+//需要解决的问题：子轩加了个麻烦的图形验证码得搞一下
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/loginPage.css';
 
@@ -6,41 +7,41 @@ import SiteHeader from '../components/siteHeader';
 import SiteFooter from '../components/siteFooter';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import useFetch from '../components/useFetch';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-const API_URL = "http://sefdb02.qut.edu.au:3001";
 
-function login(imput_email,input_password,navigate){
-    // const url = `${API_URL}/user/login`;
-    // fetch(url,{
-    //     method: "POST",
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         "email": imput_email,
-    //         "password": input_password
-    //     })
-    // })
-    // .then(res=>res.json())
-    // .then(res=>{
-    //     if (res.error) {
-    //         throw Error(res.message);
-    //     }
-    //     localStorage.setItem("token",res.token);
-    // })
-    // .then(()=>{
-    //     window.alert("Login Success!");
-    //     navigate("/");
-    // })
-    // .catch((err)=>{
-    //     localStorage.clear();
-    //     window.alert(err);
-    // })
-    navigate("/controlPage");
+function login(input_email,input_password,input_verificationcode,navigate){
+    const url = "http://127.0.0.1:8080/api/login";
+    fetch(url,{
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "userName": input_email,
+            "password": input_password,
+            "verCode": input_verificationcode
+        })
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        if (!res.success) {
+            throw Error(res.message);
+        }
+        localStorage.setItem("token",res.token);
+    })
+    .then(()=>{
+        window.alert("Login Success!");
+        navigate("/controlPage");
+    })
+    .catch((err)=>{
+        localStorage.clear();
+        window.alert(err);
+    })
 }
 
 function logout(navigate){
@@ -52,8 +53,10 @@ function logout(navigate){
 export default function LoginPage(){
     const [input_email, setInput_email] = useState("");
     const [input_password, setInput_password] = useState("");
+    const [input_verificationcode, setInput_verificationcode] = useState("");
     const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState([]);
+
     useEffect(()=>{
       let token = localStorage.getItem("token");
       if(token !== null){
@@ -62,6 +65,8 @@ export default function LoginPage(){
         setIsLogin(false);
       }
     },[]);
+
+    const {data, isPending, error} = useFetch('GET', 'http://127.0.0.1:8080/api/getAuthCode');
 
     return(
         <div id='loginpage'>
@@ -108,29 +113,75 @@ export default function LoginPage(){
                                 />
                             </Form.Group>
                             <br/>
+                            <Form.Group>
+                                <Form.Label for="passwordInput">
+                                Verification Code:
+                                </Form.Label>
+                                <Form.Control
+                                id="verificationcodeInput"
+                                name="verificationcode"
+                                placeholder="Enter the verification code in the image below"
+                                type="verificationcode"
+                                value={input_verificationcode}
+                                onChange={(event) => {
+                                    const newInput_verificationcode = event.target.value;
+                                    setInput_verificationcode(newInput_verificationcode);
+                                }}
+                                />
+                            </Form.Group>
+                            <p/>
+                            {(error) &&
+                                <div className="error justify-content-center p-3 text-center">
+                                    <h1 color="warning">
+                                        <h3>{error}</h3>
+                                    </h1>
+                                </div>}
+                            {isPending &&
+                                <div className="pending d-flex justify-content-center p-3 text-center">
+                                    <h1>Loading...</h1>
+                                </div>}
+                            {data && <img src={data.img}/>}
+                            <p/>
+                            <br/>
                             <Button 
                                 onClick={function(){
-                                    login(input_email,input_password,navigate)
+                                    login(input_email,input_password,input_verificationcode,navigate)
                                 }}
                             >
                                 Login
                             </Button>
                         </Form>
                     </div>
-                :<Form.Group>
-                    <Form.Label for='logout'>
-                        Do you want to log out? Click the button to continue.
-                    </Form.Label>
-                    <br/>
-                    <Button 
-                        id='logout'
-                        onClick={function(){
-                            logout(navigate)
-                        }}
-                    >
-                        Log Out
-                    </Button>
-                </Form.Group>
+                :
+                <div id='login-form'>
+                    <Form.Group>
+                        <h3>
+                            Your last login status is still valid 
+                        </h3>
+                        <h3>
+                            Continue editing your page or Log out
+                        </h3>
+                        <br/>
+                        <button 
+                            class="btn btn-sm btn-outline-secondary"
+                            id='continue'
+                            onClick={function(){
+                                navigate("/controlPage");
+                            }}
+                        >
+                            Open the Control page
+                        </button>
+                        <button 
+                            class="btn btn-sm btn-danger"
+                            id='logout'
+                            onClick={function(){
+                                logout(navigate)
+                            }}
+                        >
+                            Log Out
+                        </button>
+                    </Form.Group>
+                </div>
             }
             <SiteFooter/>
         </div>

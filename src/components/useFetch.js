@@ -50,7 +50,7 @@ const useFetch = (method, url, body) => {
                         if (!data.success) {
                                 throw Error(data.message);
                         }
-                        setData(data);
+                        setData(data.data);
                         setIsPending(false);
                     })
                     .catch(err => {

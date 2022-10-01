@@ -1,6 +1,5 @@
-//todo: 显示
 
-export default function UpdateWord(props){
+export default function UpdatePicture(props){
     return(
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -13,6 +12,7 @@ export default function UpdateWord(props){
                     </div>
                 </div>
             </div>
+            <div>鬼知道这是什么但我不想写css</div>
         </main>
     )
 }

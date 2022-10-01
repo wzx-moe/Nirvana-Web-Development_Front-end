@@ -12,7 +12,7 @@ li {
     float: left;
 }
 
-li a {
+.main-nav-link{
     color: #4e9631;
     text-align: center;
     text-decoration: none;
