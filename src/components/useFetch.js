@@ -28,10 +28,8 @@ const useFetch = (method, url, body) => {
     const request = useMemo(() => {
         return new Request(url, {
             method,
-            mode: "cors",
             headers,
             body,
-            credentials: "include",
         });
     }, [body, headers, method, url]);
 

@@ -12,14 +12,50 @@ import useFetch from '../components/useFetch';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+
+function login(input_email,input_password,input_verificationcode,navigate){
+    const url = "http://127.0.0.1:8080/api/login";
+    fetch(url,{
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            "userName": input_email,
+            "password": input_password,
+            "verCode": input_verificationcode
+        })
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        if (!res.success) {
+            throw Error(res.message);
+        }
+        localStorage.setItem("token",res.token);
+    })
+    .then(()=>{
+        window.alert("Login Success!");
+        navigate("/controlPage");
+    })
+    .catch((err)=>{
+        localStorage.clear();
+        window.alert(err);
+    })
+}
+
+function logout(navigate){
+    localStorage.clear();
+    window.alert("Log out Success!");
+    navigate("/");
+}
+
 export default function LoginPage(){
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [verCode, setVerCode] = useState("");
+    const [input_email, setInput_email] = useState("");
+    const [input_password, setInput_password] = useState("");
+    const [input_verificationcode, setInput_verificationcode] = useState("");
     const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState([]);
-    const [url, setUrl] = useState(null);
-    const [user, setUser] = useState(null)
 
     useEffect(()=>{
       let token = localStorage.getItem("token");
@@ -30,15 +66,7 @@ export default function LoginPage(){
       }
     },[]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        //setSuccess(false)
-        setUrl('http://127.0.0.1:8080/api/login')
-        setUser({userName, password, verCode});
-    }
-
     const {data, isPending, error} = useFetch('GET', 'http://127.0.0.1:8080/api/getAuthCode');
-    const {loginData, loginIsPending, loginError} = useFetch('POST', url, user);
 
     return(
         <div id='loginpage'>
@@ -60,9 +88,10 @@ export default function LoginPage(){
                                 name="email"
                                 placeholder="Enter your username here"
                                 type="email"
-                                value={userName}
-                                onChange={(e) => {
-                                    setUserName(e.target.value);
+                                value={input_email}
+                                onChange={(event) => {
+                                    const newInput_email = event.target.value;
+                                    setInput_email(newInput_email);
                                 }}
                                 />
                             </Form.Group>
@@ -76,8 +105,11 @@ export default function LoginPage(){
                                 name="password"
                                 placeholder="Enter your password here"
                                 type="password"
-                                value={password}
-                                onChange={(e) => {setPassword(e.target.value);}}
+                                value={input_password}
+                                onChange={(event) => {
+                                    const newInput_password = event.target.value;
+                                    setInput_password(newInput_password);
+                                }}
                                 />
                             </Form.Group>
                             <br/>
@@ -90,8 +122,11 @@ export default function LoginPage(){
                                 name="verificationcode"
                                 placeholder="Enter the verification code in the image below"
                                 type="verificationcode"
-                                value={verCode}
-                                onChange={(e) => {setVerCode(e.target.value);}}
+                                value={input_verificationcode}
+                                onChange={(event) => {
+                                    const newInput_verificationcode = event.target.value;
+                                    setInput_verificationcode(newInput_verificationcode);
+                                }}
                                 />
                             </Form.Group>
                             <p/>
@@ -109,7 +144,10 @@ export default function LoginPage(){
                             <p/>
                             <br/>
                             <Button 
-                                onClick={e => handleSubmit(e)}>
+                                onClick={function(){
+                                    login(input_email,input_password,input_verificationcode,navigate)
+                                }}
+                            >
                                 Login
                             </Button>
                         </Form>
@@ -136,6 +174,9 @@ export default function LoginPage(){
                         <button 
                             class="btn btn-sm btn-danger"
                             id='logout'
+                            onClick={function(){
+                                logout(navigate)
+                            }}
                         >
                             Log Out
                         </button>
