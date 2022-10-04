@@ -5,7 +5,12 @@
         "Attr":"HomePage",
         "Name":"Welcome Picture 1",
         "Url":"/controlPage?id=100",
-        "SourceUrl":"127.0.0.1:8080/upload/itemname"
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"ControlledCarousel",
+            "AttrName":"imgSrc1"
+        }
     },
     {
         "ID":"101",
@@ -13,7 +18,12 @@
         "Attr":"HomePage",
         "Name":"Welcome Picture 2",
         "Url":"/controlPage?id=101",
-        "SourceUrl":""
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"ControlledCarousel",
+            "AttrName":"imgSrc1"
+        }
     },
     {
         "Type":"",
@@ -22,10 +32,17 @@
         "Url":"#"
     },
     {
-        "Type":"",
+        "ID":"103",
+        "Type":"Word",
         "Attr":"HomePage",
         "Name":"Introduction Text",
-        "Url":"#"
+        "Url":"/controlPage?id=103",
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"Introduction",
+            "AttrName":"introductionText"
+        }
     },
     {
         "Type":"",
@@ -40,10 +57,17 @@
         "Url":"#"
     },
     {
-        "Type":"",
+        "ID":"106",
+        "Type":"Word",
         "Attr":"HomePage",
         "Name":"Resource Text",
-        "Url":"#"
+        "Url":"/controlPage?id=106",
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"ResourcesPreview",
+            "AttrName":"text"
+        }
     },
     {
         "Type":"",

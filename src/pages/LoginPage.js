@@ -1,5 +1,3 @@
-//todo: 一个简单的登陆界面，使用token 搞定了
-//需要解决的问题：子轩加了个麻烦的图形验证码得搞一下
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/loginPage.css';
 
@@ -25,14 +23,15 @@ function login(input_email,input_password,input_verificationcode,navigate){
             "userName": input_email,
             "password": input_password,
             "verCode": input_verificationcode
-        })
+        }),
+        credentials: "include"
     })
     .then(res=>res.json())
     .then(res=>{
         if (!res.success) {
             throw Error(res.message);
         }
-        localStorage.setItem("token",res.token);
+        localStorage.setItem("token",res.data);
     })
     .then(()=>{
         window.alert("Login Success!");
@@ -140,7 +139,7 @@ export default function LoginPage(){
                                 <div className="pending d-flex justify-content-center p-3 text-center">
                                     <h1>Loading...</h1>
                                 </div>}
-                            {data && <img src={data.img}/>}
+                            {data && <img src={data.img} alt = "Vertifacation Code"/>}
                             <p/>
                             <br/>
                             <Button 
@@ -163,7 +162,7 @@ export default function LoginPage(){
                         </h3>
                         <br/>
                         <button 
-                            class="btn btn-sm btn-outline-secondary"
+                            className="btn btn-sm btn-outline-secondary"
                             id='continue'
                             onClick={function(){
                                 navigate("/controlPage");
@@ -172,7 +171,7 @@ export default function LoginPage(){
                             Open the Control page
                         </button>
                         <button 
-                            class="btn btn-sm btn-danger"
+                            className="btn btn-sm btn-danger"
                             id='logout'
                             onClick={function(){
                                 logout(navigate)

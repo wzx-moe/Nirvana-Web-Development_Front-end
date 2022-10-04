@@ -32,6 +32,9 @@ export default function ControlPage(){
     var itemName;
     var sourceUrl;
     var itemType;
+    var detailPageName;
+    var detailComponentName;
+    var detailAttrName;
     
     
     useEffect(()=>{
@@ -48,12 +51,15 @@ export default function ControlPage(){
     const [searchParams] = useSearchParams();
     const id = searchParams.get("id");
     
+    //从存好的json中获取所需信息
     itemlist.map(item => {
-        
         if(item.ID === id){
             itemName = item.Name;
             sourceUrl = item.SourceUrl;
             itemType = item.Type;
+            detailPageName = item.Detail.PageName;
+            detailComponentName = item.Detail.ComponentName;
+            detailAttrName = item.Detail.AttrName;
         }
     })
 
@@ -78,15 +84,15 @@ export default function ControlPage(){
             {(!isLogin)
                 ?<p>Login to get details!</p>
                 :<div>
-                    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-                        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">Nirvana Personal Training</a>
-                        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+                        <Link className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" to= "/">Nirvana Personal Training</Link>
+                        <button className="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div class="navbar-nav">
-                            <div class="nav-item text-nowrap">
+                        <div className="navbar-nav">
+                            <div className="nav-item text-nowrap">
                                 <button 
-                                    class="nav-link px-3 form-control-dark"
+                                    className="nav-link px-3 form-control-dark"
                                     id='logout'
                                     onClick={function(){
                                         logout(navigate)
@@ -99,17 +105,13 @@ export default function ControlPage(){
                     </header>
 
                     <div id='card-body'>
-                        <div class="container-fluid">
-                            <div class="row">
+                        <div className="container-fluid">
+                            <div className="row">
                                 <ControlNav/>
-                                {
-                                    //step3: 根据内容调用不同模块
-                                    (itemType === "Picture")
-                                    ?<UpdatePicture name = {itemName}/>
-                                    :(itemType === "Word")
-                                    ?<UpdateWord name = {itemName}/>
-                                    :<br/>
-                                }
+                                {(itemType === "Word")&&
+                                    <UpdateWord name = {itemName} pageName = {detailPageName} componentName = {detailComponentName} attrName = {detailAttrName}/>}
+                                {(itemType === "Picture")&&
+                                    <UpdatePicture name = {itemName} pageName = {detailPageName} componentName = {detailComponentName} attrName = {detailAttrName}/>}
                             </div>
                         </div>
                     </div>

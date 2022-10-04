@@ -30,6 +30,7 @@ const useFetch = (method, url, body) => {
             method,
             headers,
             body,
+            credentials: "include"
         });
     }, [body, headers, method, url]);
 
@@ -54,7 +55,7 @@ const useFetch = (method, url, body) => {
                         setIsPending(false);
                     })
                     .catch(err => {
-                        localStorage.clear()
+                        //localStorage.clear()
                         setIsPending(false);
                         setError(err.message);
                     })
