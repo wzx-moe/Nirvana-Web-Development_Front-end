@@ -19,21 +19,21 @@ export default function ControlledCarousel(props) {
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={TestImg}
+                    src={props.imgSrc1}
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={TestImg}
+                    src={props.imgSrc2}
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={TestImg}
+                    src={props.imgSrc3}
                     alt="Third slide"
                 />
             </Carousel.Item>

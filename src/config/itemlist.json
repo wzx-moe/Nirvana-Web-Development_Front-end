@@ -22,14 +22,21 @@
         "Detail":{
             "PageName":"home",
             "ComponentName":"ControlledCarousel",
-            "AttrName":"imgSrc1"
+            "AttrName":"imgSrc2"
         }
     },
     {
-        "Type":"",
+        "ID":"102",
+        "Type":"Picture",
         "Attr":"HomePage",
         "Name":"Welcome Picture 3",
-        "Url":"#"
+        "Url":"/controlPage?id=102",
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"ControlledCarousel",
+            "AttrName":"imgSrc3"
+        }
     },
     {
         "ID":"103",
@@ -45,10 +52,17 @@
         }
     },
     {
-        "Type":"",
+        "ID":"104",
+        "Type":"Picture",
         "Attr":"HomePage",
         "Name":"Introduction Photo",
-        "Url":"#"
+        "Url":"/controlPage?id=104",
+        "SourceUrl":"127.0.0.1:8080/upload/itemname",
+        "Detail":{
+            "PageName":"home",
+            "ComponentName":"Introduction",
+            "AttrName":"introductionImgSrc"
+        }
     },
     {
         "Type":"",

@@ -6,12 +6,12 @@ export default function ControlNav(props){
         <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div className="position-sticky pt-3 sidebar-sticky">
                 <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase">
-                    <Link className="link-secondary" to="#">
+                    <Link className="link-secondary" to="/controlPage?id=1100">
                         Edit Calendar
                     </Link>
                 </h6>
                 <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase">
-                    <Link className="link-secondary" to="#">
+                    <Link className="link-secondary" to="/controlPage?id=1000">
                         Edit Videos
                     </Link>
                 </h6>

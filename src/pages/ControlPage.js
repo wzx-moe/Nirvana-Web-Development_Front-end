@@ -1,19 +1,17 @@
-//todo: 1.访问控制，未登录用户访问该url直接报错
-//      2.router设置：每条项目拥有一个独立id，访问 /controlPage?id= 获取独立页面，直接进入/controlPage 显示欢迎信息（也可以有教程啥的）
-//      3.侧边选择栏内容固定，中间具体内容调用不同模块
+//访问控制，未登录用户访问该url直接报错
+//router设置：每条项目拥有一个独立id，访问 /controlPage?id= 获取独立页面，直接进入/controlPage 显示欢迎信息（也可以有教程啥的）
+//侧边选择栏内容固定，中间具体内容调用不同模块
 import React from 'react';
 import { useEffect,useState } from 'react';
-import { useSearchParams } from "react-router-dom";
-import {Link} from "react-router-dom";
+import { useSearchParams,useNavigate,Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/dashboard.css';
 
 import ControlNav from '../components/controlNav';
 import UpdateWord from '../components/updateWord';
-import UpdatePicture from '../components/updatePicture';
-
-import { useNavigate } from "react-router-dom";
-import useFetch from '../components/useFetch';
+import UpdatePicture from '../components/updatePicture/updatePicture';
+import EditVideo from '../components/editVideo';
+import EditCalendar from '../components/editCalendar';
 
 import itemlist from '../config/itemlist.json';
 
@@ -25,58 +23,57 @@ function logout(navigate){
 
 
 export default function ControlPage(){
-    //step1: 访问控制，未登录用户直接报错
+    const [searchParams] = useSearchParams();
+    const id = searchParams.get("id");
     const navigate = useNavigate();
-    const [isLogin, setIsLogin] = useState([]);
 
-    var itemName;
-    var sourceUrl;
-    var itemType;
-    var detailPageName;
-    var detailComponentName;
-    var detailAttrName;
+    const [isLogin, setIsLogin] = useState([]);
+    const [itemName, setItemName] = useState("");
+    const [itemType, setItemType] = useState("");
+    const [detailPageName, setDetailPageName] = useState("");
+    const [detailComponentName, setDetailComponentName] = useState("");
+    const [detailAttrName, setDetailAttrName] = useState("");
+
+    const [isEditVideo, setisEditVideo] = useState(false);
+    const [isEditCalender, setisEditCalender] = useState(false);
+    const [isWelcome, setisWelcome] = useState(true);
+
     
     
     useEffect(()=>{
-      let token = localStorage.getItem("token");
-      if(token !== null){
-        setIsLogin(true);
-      }else{
-        setIsLogin(false);
-      }
-    },[]);
-
-    //step2: 根据?id= get页面所需信息
-
-    const [searchParams] = useSearchParams();
-    const id = searchParams.get("id");
-    
-    //从存好的json中获取所需信息
-    itemlist.map(item => {
-        if(item.ID === id){
-            itemName = item.Name;
-            sourceUrl = item.SourceUrl;
-            itemType = item.Type;
-            detailPageName = item.Detail.PageName;
-            detailComponentName = item.Detail.ComponentName;
-            detailAttrName = item.Detail.AttrName;
+        //访问控制，未登录用户直接报错
+        let token = localStorage.getItem("token");
+        if(token !== null){
+            setIsLogin(true);
+        }else{
+            setIsLogin(false);
         }
-    })
 
-    
-    // const { data,isPending,error } = useFetch('GET',sourceUrl,'');
-    // if(isPending){
-    //     return(
-    //         <p>
-    //             Loading...
-    //         </p>
-    //     )
-    // }
-    // if(error){
-    //     return(
-    //         <p>Something went wrong:{error}</p>
-    //     )
-    // }
+        //初始化模块配置
+        setisEditVideo(false);
+        setisEditCalender(false);
+        setisWelcome(true);
+
+        //从存好的json中获取所需信息
+        if(id !== null){
+            for(var i=0, l=itemlist.length; i<l ;i++){
+                if(itemlist[i].ID === id){
+                    setItemName(itemlist[i].Name);
+                    setItemType(itemlist[i].Type);
+                    setDetailPageName(itemlist[i].Detail.PageName);
+                    setDetailComponentName(itemlist[i].Detail.ComponentName);
+                    setDetailAttrName(itemlist[i].Detail.AttrName);
+                }
+            }
+            setisWelcome(false);
+        }
+        if(id === "1000"){
+            setisEditVideo(true);
+        }
+        if(id === "1100"){
+            setisEditCalender(true);
+        }
+    },[id]);
 
     return (
         
@@ -108,10 +105,21 @@ export default function ControlPage(){
                         <div className="container-fluid">
                             <div className="row">
                                 <ControlNav/>
-                                {(itemType === "Word")&&
+                                {(itemType === "Word")&& (!isEditVideo) && (!isEditCalender) && (!isWelcome) &&
+
                                     <UpdateWord name = {itemName} pageName = {detailPageName} componentName = {detailComponentName} attrName = {detailAttrName}/>}
-                                {(itemType === "Picture")&&
+                                {(itemType === "Picture")&& (!isEditVideo) && (!isEditCalender) && (!isWelcome) &&
                                     <UpdatePicture name = {itemName} pageName = {detailPageName} componentName = {detailComponentName} attrName = {detailAttrName}/>}
+                                {(isEditVideo) &&
+                                    <EditVideo/>}
+                                {(isEditCalender)&&
+                                    <EditCalendar/>}
+                                {(isWelcome) &&
+                                    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                                    <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">                      
+                                        <h1 className="h2">Welcome! Need Some Help?</h1>
+                                    </div>
+                                </main>}
                             </div>
                         </div>
                     </div>

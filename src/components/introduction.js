@@ -14,7 +14,7 @@ export default function Introduction(props){
                     <a id='about-button-word' href='aboutPage'>ABOUT</a>
                 </div>
             </div>
-            <Image id='Portrait' src={TestImg2} alt="Portrait"/>
+            <Image id='Portrait' src={props.introductionImgSrc} alt="Portrait"/>
         </div>
     )
 }
