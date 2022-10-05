@@ -1,11 +1,11 @@
-import '../css/contactInfo.css';
+import '../../css/contactInfo.css';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
-import logo from '../temp/logo.png';
-import phoneIcon from '../temp/phone_call.png';
-import positionIcon from '../temp/position.png';
+import logo from '../../temp/logo.png';
+import phoneIcon from '../../temp/phone_call.png';
+import positionIcon from '../../temp/position.png';
 
 
 export default function ContactInfo(props){

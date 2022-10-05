@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/loginPage.css';
 
-import SiteHeader from '../components/siteHeader';
-import SiteFooter from '../components/siteFooter';
+import SiteHeader from '../components/muti-page/siteHeader';
+import SiteFooter from '../components/muti-page/siteFooter';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import useFetch from '../components/useFetch';
+import useFetch from '../components/systemTools/useFetch';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

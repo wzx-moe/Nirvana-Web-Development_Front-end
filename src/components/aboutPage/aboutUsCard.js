@@ -1,9 +1,9 @@
-import '../css/aboutUsCard.css';
-import RecImg1 from '../temp/Rectangle4.png';
-import RecImg2 from '../temp/Rectangle5.png';
-import AboutImg1 from '../temp/aboutimg1.png';
-import AboutImg2 from '../temp/aboutimg2.png';
-import AboutImg3 from '../temp/aboutimg3.png';
+import '../../css/aboutUsCard.css';
+import RecImg1 from '../../temp/Rectangle4.png';
+import RecImg2 from '../../temp/Rectangle5.png';
+import AboutImg1 from '../../temp/aboutimg1.png';
+import AboutImg2 from '../../temp/aboutimg2.png';
+import AboutImg3 from '../../temp/aboutimg3.png';
 
 export default function AboutUsCard(props){
     return(

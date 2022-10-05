@@ -1,6 +1,6 @@
 import { FacebookOutlined, InstagramOutlined } from '@ant-design/icons';
-import '../css/header.css'
-import logo from '../temp/logo.png'
+import '../../css/header.css'
+import logo from '../../temp/logo.png'
 import {Link} from "react-router-dom";
 
 const SiteHeader = () => {

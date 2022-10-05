@@ -2,13 +2,13 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/homepage.css';
 
-import SiteHeader from '../components/siteHeader';
-import ControlledCarousel from '../components/controlledCarousel';
-import VideoSearch from '../components/videoSearch';
-import JsonRender from '../components/jsonRender';
-import SiteFooter from '../components/siteFooter';
+import SiteHeader from '../components/muti-page/siteHeader';
+import ControlledCarousel from '../components/muti-page/controlledCarousel';
+import VideoSearch from '../components/detailPage/videoSearch';
+import JsonRender from '../components/systemTools/jsonRender';
+import SiteFooter from '../components/muti-page/siteFooter';
 
-import useFetch from '../components/useFetch';
+import useFetch from '../components/systemTools/useFetch';
 import { useNavigate } from "react-router-dom";
 
 const GlobalComponent = {

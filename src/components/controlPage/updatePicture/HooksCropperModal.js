@@ -6,7 +6,7 @@ import 'cropperjs/dist/cropper.css' // 引入Cropper对应的css
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../../css/HooksCropperModal.css'
+import '../../../css/HooksCropperModal.css'
 
 
 function HooksCropperModal({ uploadedImageFile, onClose, onSubmit }) {

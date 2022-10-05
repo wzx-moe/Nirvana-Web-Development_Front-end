@@ -1,7 +1,7 @@
 import { FacebookOutlined, InstagramOutlined } from '@ant-design/icons';
-import '../css/footer.css';
-import logo from '../temp/logo.png';
-import RecImg from '../temp/Rectangle3.png';
+import '../../css/footer.css';
+import logo from '../../temp/logo.png';
+import RecImg from '../../temp/Rectangle3.png';
 import {Link} from "react-router-dom";
 
 const SiteFooter = () => {

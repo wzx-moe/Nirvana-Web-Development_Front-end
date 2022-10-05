@@ -2,13 +2,13 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/homepage.css';
 
-import SiteHeader from '../components/siteHeader';
-import JsonRender from '../components/jsonRender';
-import AboutUsCard from '../components/aboutUsCard';
-import LocationMap from '../components/locationMap';
-import SiteFooter from '../components/siteFooter';
+import SiteHeader from '../components/muti-page/siteHeader';
+import JsonRender from '../components/systemTools/jsonRender';
+import AboutUsCard from '../components/aboutPage/aboutUsCard';
+import LocationMap from '../components/aboutPage/locationMap';
+import SiteFooter from '../components/muti-page/siteFooter';
 
-import useFetch from '../components/useFetch';
+import useFetch from '../components/systemTools/useFetch';
 import { useNavigate } from "react-router-dom";
 
 

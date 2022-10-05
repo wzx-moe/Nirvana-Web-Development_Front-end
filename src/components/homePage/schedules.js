@@ -1,4 +1,4 @@
-import '../css/schedules.css'
+import '../../css/schedules.css'
 
 export default function Schedules(props){
     return(

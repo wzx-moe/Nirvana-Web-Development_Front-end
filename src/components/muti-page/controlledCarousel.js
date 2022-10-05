@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import RecImg from '../temp/Rectangle1.png';
-import TestImg from '../temp/title1.png';
-import welcomeImg from '../temp/welcomeImg.png';
+import RecImg from '../../temp/Rectangle1.png';
+import welcomeImg from '../../temp/welcomeImg.png';
 
-import '../css/carousel.css';
+import '../../css/carousel.css';
 
 export default function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);

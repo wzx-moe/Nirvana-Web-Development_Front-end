@@ -1,6 +1,6 @@
-import '../css/resourcesPreview.css';
+import '../../css/resourcesPreview.css';
 import ReactPlayer from 'react-player/lazy';
-import RecImg from '../temp/Rectangle2.png';
+import RecImg from '../../temp/Rectangle2.png';
 
 export default function ResourcesPreview(props){
     return(

@@ -1,4 +1,4 @@
-import '../css/locationMap.css'
+import '../../css/locationMap.css'
 import { Map, Marker,ZoomControl } from 'pigeon-maps'
 
 export default function LocationMap(props){

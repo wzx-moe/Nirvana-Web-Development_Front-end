@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-import useFetch from '../useFetch';
+import useFetch from '../../systemTools/useFetch';
 import HooksCropperModal from './HooksCropperModal';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024 // 文件最大限制为5M
@@ -80,18 +80,17 @@ export default function UpdatePicture(props){
         })
     }
 
-
     return(
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                                         
-                <h1 className="h2">{props.name}</h1>
+                <h2 className="h2">{props.name}</h2>
             </div>
             {(error) && (!data) && (!hooksModalVisible) &&
                 <div className="error justify-content-center p-3 text-center"><h1 color="warning">
-                    <h3>{error}</h3><p></p>
+                    <p>{error}</p>
                     <button
-                        color="warning" outline onClick={() => navigate(-1)}>Back</button></h1></div>}
+                        color="warning"  onClick={() => navigate(-1)}>Back</button></h1></div>}
             {isPending && (!hooksModalVisible) &&
                 <div className="pending d-flex justify-content-center p-3 text-center">
                     <h1>Loading...</h1>

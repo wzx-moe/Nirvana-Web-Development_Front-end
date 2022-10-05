@@ -2,15 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/homepage.css';
 
-import SiteHeader from '../components/siteHeader';
-import JsonRender from '../components/jsonRender';
-import ControlledCarousel from '../components/controlledCarousel';
-import Introduction from '../components/introduction';
-import ResourcesPreview from '../components/resourcesPreview';
-import Schedules from '../components/schedules';
-import SiteFooter from '../components/siteFooter';
+import SiteHeader from '../components/muti-page/siteHeader';
+import JsonRender from '../components/systemTools/jsonRender';
+import ControlledCarousel from '../components/muti-page/controlledCarousel';
+import Introduction from '../components/homePage/introduction';
+import ResourcesPreview from '../components/homePage/resourcesPreview';
+import Schedules from '../components/homePage/schedules';
+import SiteFooter from '../components/muti-page/siteFooter';
 
-import useFetch from '../components/useFetch';
+import useFetch from '../components/systemTools/useFetch';
 import { useNavigate } from "react-router-dom";
 
 

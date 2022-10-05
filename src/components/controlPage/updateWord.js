@@ -1,4 +1,4 @@
-import useFetch from '../components/useFetch';
+import useFetch from '../systemTools/useFetch';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,6 @@ export default function UpdateWord(props){
     const [input_text, setInput_text] = useState("");
     const [button_color,setButton_color] = useState("btn btn-sm btn-outline-secondary");
     const [button_status,setButton_status] = useState("true");
-    const [postJson,setPostJson] = useState("");
 
 
     const [pageurl,setPageurl] = useState("true");
@@ -48,7 +47,6 @@ export default function UpdateWord(props){
         }
         postBody.content = uploadjson;
         postBody = postBody && JSON.stringify(postBody);
-        setPostJson(postBody);
 
         fetch(jsonurl,{
             method: "POST",
@@ -90,12 +88,12 @@ export default function UpdateWord(props){
                     </div>
                 </div>
             </div>
-            {(error) && (!data) &&
+            {(error) && (!data)  &&
                 <div className="error justify-content-center p-3 text-center"><h1 color="warning">
-                    <h3>{error}</h3><p></p>
+                    <p>{error}</p>
                     <button
-                        color="warning" outline onClick={() => navigate(-1)}>Back</button></h1></div>}
-            {isPending &&
+                        color="warning"  onClick={() => navigate(-1)}>Back</button></h1></div>}
+            {isPending  &&
                 <div className="pending d-flex justify-content-center p-3 text-center">
                     <h1>Loading...</h1>
                 </div>}

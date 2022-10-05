@@ -1,6 +1,5 @@
-import '../css/introduction.css'
+import '../../css/introduction.css'
 import { Image } from 'react-bootstrap';
-import TestImg2 from '../temp/title2.png';
 
 export default function Introduction(props){
     return(

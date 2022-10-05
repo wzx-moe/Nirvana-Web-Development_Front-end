@@ -7,11 +7,11 @@ import { useSearchParams,useNavigate,Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/dashboard.css';
 
-import ControlNav from '../components/controlNav';
-import UpdateWord from '../components/updateWord';
-import UpdatePicture from '../components/updatePicture/updatePicture';
-import EditVideo from '../components/editVideo';
-import EditCalendar from '../components/editCalendar';
+import ControlNav from '../components/controlPage/controlNav';
+import UpdateWord from '../components/controlPage/updateWord';
+import UpdatePicture from '../components/controlPage/updatePicture/updatePicture';
+import EditVideo from '../components/controlPage/editVideo';
+import EditCalendar from '../components/controlPage/editCalendar';
 
 import itemlist from '../config/itemlist.json';
 

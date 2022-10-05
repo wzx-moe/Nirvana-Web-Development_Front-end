@@ -1,4 +1,4 @@
-import itemlist from '../config/itemlist.json';
+import itemlist from '../../config/itemlist.json';
 import {Link} from "react-router-dom";
 
 export default function ControlNav(props){
