@@ -15,10 +15,9 @@
 }
 
 #video-play{
-    position: absolute;
-    left: 33%;
+    position: absolute; 
+    left: 15%;
     top: 25%;
-    width: 60%;
 }
 
 #video-bottom{

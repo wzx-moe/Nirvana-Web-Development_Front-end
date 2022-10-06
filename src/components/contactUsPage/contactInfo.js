@@ -9,6 +9,10 @@ import positionIcon from '../../temp/position.png';
 
 
 export default function ContactInfo(props){
+    function handleSubmit(){
+        window.alert("Thank You For Your Message!")
+    }
+
     return(
         <div id='contact-body'>
             <div id='contact-info'>
@@ -48,7 +52,11 @@ export default function ContactInfo(props){
                             />
                         </FloatingLabel>
                         <br/>
-                        <Button variant="primary" type="submit">
+                        <Button 
+                            variant="primary" 
+                            type="submit"
+                            onClick={handleSubmit}
+                        >
                             Send
                         </Button>
                     </Form>

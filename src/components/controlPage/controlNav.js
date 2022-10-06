@@ -29,7 +29,7 @@ export default function ControlNav(props){
                                             {item.Name}
                                         </Link>
                                     </li>
-                                 )
+                                )
                             }
                         })
                     }

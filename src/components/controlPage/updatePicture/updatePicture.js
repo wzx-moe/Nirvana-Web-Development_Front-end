@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import useFetch from '../../systemTools/useFetch';
 import HooksCropperModal from './HooksCropperModal';
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024 // 文件最大限制为5M
-
 export default function UpdatePicture(props){
     const navigate = useNavigate();
 
@@ -17,13 +15,20 @@ export default function UpdatePicture(props){
     const [pictureSrc, setPictureSrc] = useState("");
 
     const {data, isPending, error} = useFetch('GET', pageurl);
+    const {imgdata, imgIsPending, imgError} = useFetch('GET', pictureSrc)
 
     useEffect(()=>{
-        setPageurl('http://127.0.0.1:8080/api/page/' + props.pageName);
+        setPageurl(window.BASE_URL + '/api/page/' + props.pageName);
         if(data){
             setPictureSrc(readMessage());
         }
-    },[data,props]);
+    },[props]);
+
+    useEffect(()=>{
+        if(data){
+            setPictureSrc(readMessage());
+        }
+    },[data]);
 
     const readMessage=()=>{
         var OriginPictureSrc;
@@ -38,7 +43,7 @@ export default function UpdatePicture(props){
     const handleHooksFileChange = (e) => {
         const file = e.target.files[0]
         if (file) {
-            if (file.size <= MAX_FILE_SIZE) {
+            if (file.size <= window.MAX_FILE_SIZE) {
                 sethooksModalFile(file);
                 sethooksModalVisible(true);
             } else {
@@ -50,10 +55,9 @@ export default function UpdatePicture(props){
     const handleSubmit = (e) =>{
         setPictureSrc(e);
         var formData = new FormData();
-        //问题1，这个鬼文件名应该写啥
-        formData.append('file', e, "this.png")
+        formData.append('file', e, 'picture.jpg')
 
-        fetch(("http://127.0.0.1:8080/api/upload/"+props.name),{
+        fetch((window.BASE_URL + "/api/upload/"+props.name),{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -73,7 +77,7 @@ export default function UpdatePicture(props){
                     throw Error("Error! Error Code:" + data.code);
             }
             window.alert("Success!")
-            setPictureSrc(("http://127.0.0.1:8080/upload/"+props.name));
+            setPictureSrc(readMessage());
         })
         .catch((err)=>{
             window.alert(err);

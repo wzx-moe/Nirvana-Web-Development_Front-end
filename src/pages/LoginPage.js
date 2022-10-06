@@ -12,7 +12,7 @@ import Form from 'react-bootstrap/Form';
 
 
 function login(input_email,input_password,input_verificationcode,navigate){
-    const url = "http://127.0.0.1:8080/api/login";
+    const url = window.BASE_URL + "/api/login";
     fetch(url,{
         method: "POST",
         headers: {
@@ -65,7 +65,7 @@ export default function LoginPage(){
       }
     },[]);
 
-    const {data, isPending, error} = useFetch('GET', 'http://127.0.0.1:8080/api/getAuthCode');
+    const {data, isPending, error} = useFetch('GET', window.BASE_URL+'/api/getAuthCode');
 
     return(
         <div id='loginpage'>

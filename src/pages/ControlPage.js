@@ -10,10 +10,11 @@ import '../css/dashboard.css';
 import ControlNav from '../components/controlPage/controlNav';
 import UpdateWord from '../components/controlPage/updateWord';
 import UpdatePicture from '../components/controlPage/updatePicture/updatePicture';
-import EditVideo from '../components/controlPage/editVideo';
+import EditVideo from '../components/controlPage/editVideo/editVideo';
 import EditCalendar from '../components/controlPage/editCalendar';
 
 import itemlist from '../config/itemlist.json';
+
 
 function logout(navigate){
     localStorage.clear();

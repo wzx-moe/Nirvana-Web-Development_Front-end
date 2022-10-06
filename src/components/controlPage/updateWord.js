@@ -17,8 +17,8 @@ export default function UpdateWord(props){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        setPageurl('http://127.0.0.1:8080/api/page/' + props.pageName);
-        setJsonurl('http://127.0.0.1:8080/api/page/update');
+        setPageurl(window.BASE_URL + '/api/page/' + props.pageName);
+        setJsonurl(window.BASE_URL + '/api/page/update');
     },[props]);
 
     useEffect(()=>{

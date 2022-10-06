@@ -23,7 +23,7 @@ export default function AboutPage(){
     const navigate = useNavigate();
 
     //打开时Get页面Json
-    const {data, isPending, error} = useFetch('GET', 'http://127.0.0.1:8080/api/page/about');
+    const {data, isPending, error} = useFetch('GET', window.BASE_URL + '/api/page/about');
 
     return (
         <div id='homepage'>

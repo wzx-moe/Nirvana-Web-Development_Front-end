@@ -25,63 +25,63 @@ function HooksCropperModal({ uploadedImageFile, onClose, onSubmit }) {
     fileReader.readAsDataURL(uploadedImageFile)
   }, [uploadedImageFile])
 
-  const getCropData = () => {
-    if (typeof cropper !== "undefined") {
-      setCropData(cropper.getCroppedCanvas().toBlob());
-    }
-  };
 
   const handleCut = () => {
     setCropData(cropper.getCroppedCanvas().toDataURL());
+    window.alert("Cut Success!");
     
   }
   const handleSubmit = useCallback(() => {
       //把选中裁切好的的图片传出去
-      // if (cropper !== "undefined") {
-      cropper.getCroppedCanvas().toBlob(blob=>{
-        onSubmit(blob);
-      })
-
+      if (cropper !== "undefined") {
+        cropper.getCroppedCanvas().toBlob(blob=>{
+          onSubmit(blob);
+        })
+      }
       // 关闭弹窗
       onClose();
     // })
   }, [onClose, onSubmit,cropData,cropper])
 
+  const handleClose= ()=>{
+    onClose();
+  }
+
   return (
-    <div className="hooks-cropper-modal">
-      <div className="modal-panel">
-        <div className="cropper-container-container">
-          <div className="cropper-container">
-            <Cropper
-              className="cropper"
-              zoomTo={0.5}
-              initialAspectRatio={1}
-              preview=".cropper-preview"
-              src={src}
-              viewMode={1}
-              minCropBoxHeight={10}
-              minCropBoxWidth={10}
-              background={false}
-              responsive={true}
-              autoCropArea={1}
-              onInitialized={(instance) => {
-                setCropper(instance);
-              }}
-              guides={true}
-            />
-          </div>
-          <div className="preview-container">
-            <div className="cropper-preview" />
-          </div>
-          <div className="crop-container">
-            <img className="crop-submitpreview" src={cropData} alt ="cropped"/>
-          </div>
+    <div className="container overflow-hidden text-center">
+      <div className="row g-2">
+        <div className="col-4">
+          <Cropper
+            className="cropper"
+            zoomTo={0.5}
+            initialAspectRatio={1}
+            preview=".cropper-preview"
+            src={src}
+            viewMode={1}
+            minCropBoxHeight={10}
+            minCropBoxWidth={10}
+            background={false}
+            responsive={true}
+            autoCropArea={1}
+            onInitialized={(instance) => {
+              setCropper(instance);
+            }}
+            guides={true}
+          />
         </div>
-        <div className="button-row">
-          <button className="btn btn-sm btn-outline-secondary col-4" onClick={handleCut}>
+        <div className="col-4">
+          <div className="cropper-preview" />
+        </div>
+      </div>
+      <div className='row g-2'>
+        <div className="btn-group col-6">
+          <button className="btn btn-secondary" onClick={handleClose}>
+            Back
+          </button>
+          <button className="btn btn-primary " onClick={handleCut}>
             Cut
           </button>
-          <button className="btn btn-sm btn-outline-danger col-4" onClick={handleSubmit}>
+          <button className="btn btn-danger" onClick={handleSubmit}>
             Submit
           </button>
         </div>

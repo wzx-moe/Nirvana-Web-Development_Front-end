@@ -22,7 +22,7 @@ export default function DetailPage(){
     const navigate = useNavigate();
 
     //打开时Get页面Json
-    const {data, isPending, error} = useFetch('GET', 'http://127.0.0.1:8080/api/page/resources');
+    const {data, isPending, error} = useFetch('GET', window.BASE_URL + '/api/page/resources');
     
     return (
         <div id='homepage'>
