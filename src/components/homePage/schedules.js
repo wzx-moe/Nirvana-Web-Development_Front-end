@@ -130,12 +130,12 @@ export default function Schedules(props){
                 </select>
             </div>
             <div className="schedules-cal">
-                <div className="schedules-vector"><img src={vectorL}/></div>
+                <div className="schedules-vector"></div>
                 <div className="schedules-cal-box">
 
                     <div className="schedules-cal-line">
                         <div className="schedules-cal-time">
-                            <p className='schedules-words'>{(new Date(parseInt(yearData),parseInt(monthData)-1,parseInt(dayData)).toLocaleDateString('en-US', {weekday: 'long',}))}</p>
+                            <p className='schedules-title-words'>{(new Date(parseInt(yearData),parseInt(monthData)-1,parseInt(dayData)).toLocaleDateString('en-US', {weekday: 'long',}))}</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -153,7 +153,7 @@ export default function Schedules(props){
                             <p className='schedules-divide-word'>Morning</p>
                         </div>
                         <div className="schedules-cal-event">
-                            <p className='schedules-words'>Events</p>
+                            <p className='schedules-title-words'>Events</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -202,7 +202,7 @@ export default function Schedules(props){
                         </div>
                     </div>
                 </div>
-                <div className="schedules-vector"><img src={vectorR}/></div>
+                <div className="schedules-vector"></div>
             </div>
         </div>
     )

@@ -100,6 +100,12 @@
     display:inline-block;
 }
 
+.schedules-title-words{
+    font-family: "Times New Roman";
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
 .schedules-words{
     text-decoration:underline;
     font-family: "Times New Roman";
