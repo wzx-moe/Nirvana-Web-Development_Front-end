@@ -14,16 +14,22 @@
     height: 10%;
 }
 
+#default-video-play{
+    position: absolute; 
+    left: 30%;
+    top: 25%;
+}
+
 #video-play{
     position: absolute; 
     left: 15%;
     top: 25%;
 }
 
-#default-video-play{
-    position: absolute; 
-    left: 30%;
-    top: 25%;
+#video-play-button{
+    position: absolute;
+    left: 29%;
+    top: 80%;
 }
 
 #video-bottom{

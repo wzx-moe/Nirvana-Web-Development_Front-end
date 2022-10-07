@@ -12,7 +12,6 @@ export default function LocationMap(props){
                     defaultZoom={13}
                     onClick={()=>{window.location.href=props.googleMapUrl}}
                 >
-                    {console.log([parseFloat(props.locationLatitude),parseFloat(props.locationLatitude)])}
                     <Marker 
                         width={50}
                         anchor={[parseFloat(props.locationLongitude),parseFloat(props.locationLatitude)]}

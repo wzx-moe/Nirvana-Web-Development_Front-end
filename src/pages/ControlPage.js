@@ -11,7 +11,7 @@ import ControlNav from '../components/controlPage/controlNav';
 import UpdateWord from '../components/controlPage/updateWord';
 import UpdatePicture from '../components/controlPage/updatePicture/updatePicture';
 import EditVideo from '../components/controlPage/editVideo/editVideo';
-import EditCalendar from '../components/controlPage/editCalendar';
+import EditCalendar from '../components/controlPage/editCalendar/editCalendar';
 
 import itemlist from '../json/itemlist.json';
 

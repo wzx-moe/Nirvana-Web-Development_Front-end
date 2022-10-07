@@ -11,9 +11,6 @@ import '../../../css/editVideo.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-//todo: 读取视频列表，展示现有视频
-//功能：增删视频，增代码（后端做了增改查代码，我原型里没写就先不管了w）
-
 export default function EditVideo(){
     const navigate = useNavigate();
 
@@ -62,6 +59,36 @@ export default function EditVideo(){
         })
         .then(()=>{
             window.alert("Add Video Success!");
+        })
+        .catch((err)=>{
+            window.alert(err);
+        })
+    }
+
+    function handleCodeSubmit(videoList){
+        var uploadUrl = [];
+        for(var i=0, l=videoList.length; i<l ;i++){
+            uploadUrl.push(videoList[i].url);
+        }
+        fetch(process.env.REACT_APP_API_URL + "/api/code/add",{
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
+            body: JSON.stringify({
+                "code":"",
+                "url": uploadUrl
+            }),
+            credentials: "include"
+        })
+        .then(res=>res.json())
+        .then(res=>{
+            if (!res.success) {
+                throw Error(res.message);
+            }
+            window.alert("Success! Your code is :"+res.data.code);
         })
         .catch((err)=>{
             window.alert(err);
@@ -161,7 +188,7 @@ export default function EditVideo(){
                     onClose={() => {
                         setisCreatingCode(false)
                     }}
-                    onSubmit={()=>{}}
+                    onSubmit={handleCodeSubmit}
                 />
             }
         </main>
