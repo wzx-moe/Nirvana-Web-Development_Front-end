@@ -48,6 +48,10 @@
     left: 55%;
     top: 25%;
 
+    font-weight: 600;
+    font-size: 1.5vw;
+    color: #588E44;
+
     background: rgba(242, 248, 231, 0.65);
     text-align: center;
 }

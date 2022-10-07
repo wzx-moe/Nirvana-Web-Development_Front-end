@@ -65,12 +65,12 @@ export default function AddVideo({onClose, onSubmit}) {
             <div className="input-group">
                 <button 
                     type="button" 
-                    className="btn btn-primary col-2 "
+                    className="btn btn-outline-primary col-2 "
                     onClick={handleClose}
                 >Back</button>
                 <button 
                     type="button" 
-                    className="btn btn-danger col-2"
+                    className="btn btn-outline-danger col-2"
                     onClick={handleSubmit}
                 >Submit</button>
             </div>

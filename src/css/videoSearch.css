@@ -20,6 +20,12 @@
     top: 25%;
 }
 
+#default-video-play{
+    position: absolute; 
+    left: 30%;
+    top: 25%;
+}
+
 #video-bottom{
     position: absolute;
     bottom: 0%;

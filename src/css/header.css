@@ -29,16 +29,34 @@ li {
     z-index: 2;
 }
 
+
+
 #ins-top {
     position: absolute;
-    left: 14%;
+    left: 12%;
     top: 40%;
+    width: 2%;
+    height: 40%;
+}
+
+#Ins-icon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #facebook-top {
     position: absolute;
     left: 17%;
     top: 40%;
+    width: 1.76%;
+    height: 35%;
+}
+
+#Facebook-icon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #home {

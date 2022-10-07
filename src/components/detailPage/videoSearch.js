@@ -12,9 +12,10 @@ export default function VideoSearch(props){
     
     const [code,setcode] = useState("");
     const [videoData,setvideoData] = useState();
+    const [isCodeAdded,setisCodeAdded] = useState(false);
 
     function handleSubmit(){
-        fetch(window.BASE_URL + "/api/code/"+code,{
+        fetch(process.env.REACT_APP_API_URL + "/api/code/"+code,{
             method: "Get",
             headers: {
                 'Accept': 'application/json',
@@ -29,6 +30,7 @@ export default function VideoSearch(props){
                 throw Error(res.message);
             }
             setvideoData(res.data);
+            setisCodeAdded(true);
         })
         .catch((err)=>{
             window.alert(err);
@@ -64,15 +66,23 @@ export default function VideoSearch(props){
                                 onClick={function(){
                                     handleSubmit()
                                 }}>
-                                Search
+                                Get More!
                             </Button>
                         </Col>
                     </Row>
                 </Form>
             </div>
+            {!isCodeAdded &&
+                <div id='default-video-play' className='container row'>
+                    <div className="col-6">
+                        <ReactPlayer url={props.url} controls={true}/>
+                    </div>
+                </div>   
+            }
             {videoData &&
                 <div id='video-play' className='container row'>
-                    {videoData.url.map(videoUrl=>{
+                    {isCodeAdded &&
+                     videoData.url.map(videoUrl=>{
                         return(
                             <div className="col-6">
                                 <ReactPlayer url={"https://www.youtube.com/watch?v="+videoUrl} controls={true}/>

@@ -13,7 +13,7 @@ import UpdatePicture from '../components/controlPage/updatePicture/updatePicture
 import EditVideo from '../components/controlPage/editVideo/editVideo';
 import EditCalendar from '../components/controlPage/editCalendar';
 
-import itemlist from '../config/itemlist.json';
+import itemlist from '../json/itemlist.json';
 
 
 function logout(navigate){

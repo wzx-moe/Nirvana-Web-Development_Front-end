@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import useFetch from '../../systemTools/useFetch';
 import HooksCropperModal from './HooksCropperModal';
 
+const MAX_FILE_SIZE = 20*1024*1024
+
 export default function UpdatePicture(props){
     const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ export default function UpdatePicture(props){
     const {imgdata, imgIsPending, imgError} = useFetch('GET', pictureSrc)
 
     useEffect(()=>{
-        setPageurl(window.BASE_URL + '/api/page/' + props.pageName);
+        setPageurl(process.env.REACT_APP_API_URL + '/api/page/' + props.pageName);
         if(data){
             setPictureSrc(readMessage());
         }
@@ -34,7 +36,7 @@ export default function UpdatePicture(props){
         var OriginPictureSrc;
         for(var i=0, l=data.content.length; i<l ;i++){
             if(data.content[i].name ===  props.componentName){
-                OriginPictureSrc =  data.content[i].attr[props.attrName]
+                OriginPictureSrc =  process.env.REACT_APP_API_URL + data.content[i].attr[props.attrName]
             }
         }
         return(OriginPictureSrc)
@@ -43,7 +45,7 @@ export default function UpdatePicture(props){
     const handleHooksFileChange = (e) => {
         const file = e.target.files[0]
         if (file) {
-            if (file.size <= window.MAX_FILE_SIZE) {
+            if (file.size <= MAX_FILE_SIZE) {
                 sethooksModalFile(file);
                 sethooksModalVisible(true);
             } else {
@@ -57,7 +59,7 @@ export default function UpdatePicture(props){
         var formData = new FormData();
         formData.append('file', e, 'picture.jpg')
 
-        fetch((window.BASE_URL + "/api/upload/"+props.name),{
+        fetch((process.env.REACT_APP_API_URL + "/api/upload/"+props.name),{
             method: "POST",
             headers: {
                 'Accept': 'application/json',

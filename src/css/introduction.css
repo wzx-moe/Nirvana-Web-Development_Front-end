@@ -42,8 +42,11 @@
     left: 10%;
     top: 18%;
     
+    font-weight: 600;
+    font-size: 1.5vw;
+    color: #588E44;
 
-    background: #C7CFB9;
+    background: #a7b195;
 
     text-align: center;
 }

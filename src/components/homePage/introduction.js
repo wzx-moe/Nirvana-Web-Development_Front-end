@@ -13,7 +13,7 @@ export default function Introduction(props){
                     <a id='about-button-word' href='aboutPage'>ABOUT</a>
                 </div>
             </div>
-            <Image id='Portrait' src={props.introductionImgSrc} alt="Portrait"/>
+            <Image id='Portrait' src={process.env.REACT_APP_API_URL + props.introductionImgSrc} alt="Portrait"/>
         </div>
     )
 }

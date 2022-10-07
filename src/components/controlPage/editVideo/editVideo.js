@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function EditVideo(){
     const navigate = useNavigate();
 
-    const [videolisturl,setvideolisturl] = useState(window.BASE_URL + "/api/video/getVideos");
+    const [videolisturl,setvideolisturl] = useState(process.env.REACT_APP_API_URL + "/api/video/getVideos");
 
     const [isAddingVideo,setisAddingVideo] = useState(false);
     const [isCreatingCode,setisCreatingCode] = useState(false);
@@ -26,7 +26,7 @@ export default function EditVideo(){
 
 
     useEffect(()=>{
-        setvideolisturl(window.BASE_URL + "/api/video/getVideos");
+        setvideolisturl(process.env.REACT_APP_API_URL + "/api/video/getVideos");
     },[]);
 
 
@@ -40,7 +40,7 @@ export default function EditVideo(){
 
     function handleAddSubmit(videoName,videoInfo,videoID){
         console.log(videoName,videoInfo,videoID);
-        fetch(window.BASE_URL + "/api/video/add",{
+        fetch(process.env.REACT_APP_API_URL + "/api/video/add",{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -69,7 +69,7 @@ export default function EditVideo(){
     }
 
     function handleDelete(id){
-        fetch(window.BASE_URL + "/api/video/delete/"+id,{
+        fetch(process.env.REACT_APP_API_URL + "/api/video/delete/"+id,{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -124,7 +124,7 @@ export default function EditVideo(){
                                         <p className="card-text">Video Information: {video.description}</p>
                                         <button 
                                             type="button" 
-                                            className="btn btn-danger"
+                                            className="btn btn-outline-danger"
                                             onClick={(e)=>{handleDelete(video.id)}}
                                         >Delete</button>
                                         <br/>
@@ -137,12 +137,12 @@ export default function EditVideo(){
                     <div className="input-group">
                         <button 
                             type="button" 
-                            className="btn btn-secondary col-2 "
+                            className="btn btn-outline-secondary col-2 "
                             onClick={handleAdd}
                         >Add</button>
                         <button 
                             type="button" 
-                            className="btn btn-success col-2"
+                            className="btn btn-outline-primary col-2"
                             onClick={handleCreateCode}
                         >Create Code</button>
                     </div>

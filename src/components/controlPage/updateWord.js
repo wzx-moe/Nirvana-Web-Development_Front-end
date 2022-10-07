@@ -2,6 +2,8 @@ import useFetch from '../systemTools/useFetch';
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
+import "../../css/updataWord.css";
+
 export default function UpdateWord(props){
     
     const [input_text, setInput_text] = useState("");
@@ -17,8 +19,8 @@ export default function UpdateWord(props){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        setPageurl(window.BASE_URL + '/api/page/' + props.pageName);
-        setJsonurl(window.BASE_URL + '/api/page/update');
+        setPageurl(process.env.REACT_APP_API_URL + '/api/page/' + props.pageName);
+        setJsonurl(process.env.REACT_APP_API_URL + '/api/page/update');
     },[props]);
 
     useEffect(()=>{
@@ -36,7 +38,7 @@ export default function UpdateWord(props){
     const handleSubmit = (e) => {
         e.preventDefault();
         var postBody = {
-            "name":"home",
+            "name":props.pageName,
             "content":""
         }
         var uploadjson = data.content;
@@ -106,6 +108,7 @@ export default function UpdateWord(props){
                         onClick={e => handleSubmit(e)}
                     >Upload</button>
                     <textarea 
+                        id="Input-Textarea"
                         className="form-control" 
                         aria-label="With textarea" 
                         value={input_text}

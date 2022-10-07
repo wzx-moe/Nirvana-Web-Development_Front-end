@@ -23,14 +23,31 @@
 
 #ins {
     position: absolute;
-    left: 85%;
-    top: 80%;
+    left: 83%;
+    top: 70%;
+    width: 2.5%;
+    height: 25%;
+}
+
+#Ins-icon-bottom{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #facebook {
     position: absolute;
-    left: 87%;
-    top: 80%;
+    left: 90%;
+    top: 72%;
+    width: 2%;
+    height: 20%;
+}
+
+
+#facebook-icon-bottom{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #copyright{

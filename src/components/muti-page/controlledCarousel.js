@@ -18,21 +18,21 @@ export default function ControlledCarousel(props) {
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc1}
+                    src={process.env.REACT_APP_API_URL + props.imgSrc1}
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc2}
+                    src={process.env.REACT_APP_API_URL + props.imgSrc2}
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="carousel-img"
-                    src={props.imgSrc3}
+                    src={process.env.REACT_APP_API_URL + props.imgSrc3}
                     alt="Third slide"
                 />
             </Carousel.Item>

@@ -75,13 +75,13 @@ function HooksCropperModal({ uploadedImageFile, onClose, onSubmit }) {
       </div>
       <div className='row g-2'>
         <div className="btn-group col-6">
-          <button className="btn btn-secondary" onClick={handleClose}>
+          <button className="btn btn-outline-secondary" onClick={handleClose}>
             Back
           </button>
-          <button className="btn btn-primary " onClick={handleCut}>
+          <button className="btn btn-outline-primary " onClick={handleCut}>
             Cut
           </button>
-          <button className="btn btn-danger" onClick={handleSubmit}>
+          <button className="btn btn-outline-danger" onClick={handleSubmit}>
             Submit
           </button>
         </div>
