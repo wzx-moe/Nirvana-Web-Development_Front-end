@@ -109,14 +109,13 @@
 .schedules-words{
     text-decoration:underline;
     font-family: "Times New Roman";
-    font-size: 1.3vw;
-    font-weight: bold;
+    font-size: 1vw;
 }
 
 .schedules-divide-word{
     font-family: "Times New Roman";
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     font-weight: bold;
     display: flex;
-    margin: 6%;
+    margin-left: 6%;
 }

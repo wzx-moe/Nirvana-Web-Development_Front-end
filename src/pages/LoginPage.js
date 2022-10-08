@@ -161,24 +161,27 @@ export default function LoginPage(){
                             Continue editing your page or Log out
                         </h3>
                         <br/>
-                        <button 
-                            className="btn btn-sm btn-outline-secondary"
-                            id='continue'
-                            onClick={function(){
-                                navigate("/controlPage");
-                            }}
-                        >
-                            Open the Control page
-                        </button>
-                        <button 
-                            className="btn btn-sm btn-danger"
-                            id='logout'
-                            onClick={function(){
-                                logout(navigate)
-                            }}
-                        >
-                            Log Out
-                        </button>
+                        <div className="btn-group col-6">
+                            <button 
+                                className="btn btn-sm btn-outline-secondary"
+                                id='continue'
+                                onClick={function(){
+                                    navigate("/controlPage");
+                                }}
+                            >
+                                Open the Control page
+                            </button>
+                            <button 
+                                className="btn btn-sm btn-danger"
+                                id='logout'
+                                onClick={function(){
+                                    logout(navigate)
+                                }}
+                            >
+                                Log Out
+                            </button>
+                        </div>
+                        
                     </Form.Group>
                 </div>
             }

@@ -32,8 +32,12 @@ export default function EditCalendar(){
 
     const handleSubmit = (startDate,endDate,eventName,eventDescription,eventRepeatType)=>{
         console.log(startDate,endDate,eventName,eventDescription,eventRepeatType);
-        //
+        
         var descriptionTime = (endDate.getTime() - startDate.getTime())/1000/60;
+        if(eventName.length > 30){
+            window.alert("Event Name Should Be Shorter Than Max 30 Characters");
+            return;
+        }
         if(descriptionTime < 0){
             window.alert("End time needs to be later than the start time, Submit failed");
             return;

@@ -41,14 +41,19 @@
     width: 80%;
     left: 10%;
     top: 18%;
-    
+    background: #a7b195;
+}
+
+.intro-text-word{
     font-family: "Times New Roman";
     font-size: 1.5vw;
     color: #2e6b17;
-
-    background: #a7b195;
-
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     text-align: center;
+
 }
 
 #about-button{

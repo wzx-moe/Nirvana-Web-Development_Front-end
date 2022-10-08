@@ -1,7 +1,5 @@
 import '../../css/schedules.css'
 import scheduleLogo from '../../temp/schedule.svg';
-import vectorL from '../../temp/Vector-l.svg';
-import vectorR from '../../temp/Vector-r.svg';
 
 import { useState,useEffect } from 'react';
 
@@ -136,6 +134,7 @@ export default function Schedules(props){
                     <div className="schedules-cal-line">
                         <div className="schedules-cal-time">
                             <p className='schedules-title-words'>{(new Date(parseInt(yearData),parseInt(monthData)-1,parseInt(dayData)).toLocaleDateString('en-US', {weekday: 'long',}))}</p>
+                            <p className='schedules-divide-word'>Morning</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -150,10 +149,11 @@ export default function Schedules(props){
                                     }
                                 })
                             }
-                            <p className='schedules-divide-word'>Morning</p>
+                            
                         </div>
                         <div className="schedules-cal-event">
                             <p className='schedules-title-words'>Events</p>
+                            <p className='schedules-divide-word'>Become an Early Bird</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -165,11 +165,11 @@ export default function Schedules(props){
                                     }
                                 })
                             }
-                            <p className='schedules-divide-word'>|</p>
                         </div>
                     </div>
                     <div className="schedules-cal-line">
                         <div className="schedules-cal-time">
+                            <p className='schedules-divide-word'>Afternoon</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -184,9 +184,9 @@ export default function Schedules(props){
                                     }
                                 })
                             }
-                            <p className='schedules-divide-word'>Afternoon</p>
                         </div>
                         <div className="schedules-cal-event">
+                            <p className='schedules-divide-word'>Enjoy an Energetic Afternoon!</p>
                             {(data) &&
                                 data.map(Event =>{
                                     var newDate = new Date(Event.dateTime)
@@ -198,7 +198,7 @@ export default function Schedules(props){
                                     }
                                 })
                             }
-                            <p className='schedules-divide-word'>|</p>
+                            
                         </div>
                     </div>
                 </div>

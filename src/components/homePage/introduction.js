@@ -7,7 +7,7 @@ export default function Introduction(props){
             <div id='inner-intro-div'>
                 <p id='intro-title'>Introduction</p>
                 <div id='intro-text'>
-                    <p>{props.introductionText}</p>
+                    <p className='intro-text-word'>{props.introductionText}</p>
                 </div>
                 <div id='about-button'>
                     <a id='about-button-word' href='aboutPage'>ABOUT</a>

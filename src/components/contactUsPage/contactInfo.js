@@ -23,7 +23,7 @@ export default function ContactInfo(props){
     function handleSubmit(e){
         e.preventDefault();
         if(nameData === ""){
-            window.alert("We need more message in order to contact with you, Please enter your name below");
+            window.alert("We need more message in order to contact with you, fill in your name below, and it will be of great help to us!");
             return;
         }
         if(!validateEmail(emailData)){
@@ -121,7 +121,7 @@ export default function ContactInfo(props){
                         </FloatingLabel>
                         <br/>
                         <Button 
-                            variant="primary" 
+                            variant="success" 
                             type="submit"
                             onClick={e=>handleSubmit(e)}
                         >
