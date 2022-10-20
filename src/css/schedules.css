@@ -101,19 +101,21 @@
 }
 
 .schedules-title-words{
-    font-family: "Times New Roman";
+    font-family: "Arial";
     font-size: 1.5vw;
     font-weight: bold;
 }
 
 .schedules-words{
     text-decoration:underline;
-    font-family: "Times New Roman";
+    font-family: "Arial";
     font-size: 1vw;
+    display: flex;
+    margin-left: 10%;
 }
 
 .schedules-divide-word{
-    font-family: "Times New Roman";
+    font-family: "Arial";
     font-size: 1.2vw;
     font-weight: bold;
     display: flex;
